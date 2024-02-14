@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mockup Master Frameworks JavaScript</title>
+		<link rel="stylesheet" href="assets/css/head.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/header.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/footer.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/form.css" type="text/css">
+
+		<script type="text/JavaScript">
+			window.addEventListener("load", (event) => {
+				var template = document.getElementById("articleTemplate");
+	
+				var articles = document.getElementById("articles");
+
+				for (var i = 1; i <= 5; i++) {
+					var cloned = template.cloneNode(true);
+					cloned.removeAttribute("id");
+					cloned.setAttribute("id","articleId"+i);
+
+					var h2 = cloned.getElementsByTagName("h2")[0];
+
+					h2.innerHTML = h2.textContent + ' ' + i;
+
+					articles.appendChild(cloned);
+				}
+			})
+		</script>
+	</head>
+	<body>
+		<header id="header">
+			<div class="center">
+				<!--logo-->
+				<div id="logo">
+					<img src="assets/images/react.svg" alt="appLogo" alt="Logo">
+					<span id="brand">
+						<strong>Curso</strong>React
+					</span>
+				</div>
+
+				<!--Nav-->
+				<nav id="menu">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Form</a></li>
+						<li><a href="#">Page 1</a></li>
+						<li><a href="#">Page 2</a></li>
+					</ul>
+				</nav>
+
+				<div class="clearfix"></div>
+			</div>
+		</header>
+
+		<div id="slider" class="sliderBig">
+			<h1>Welcome to the Master:React</h1>
+			<a href="#" class="btnWhite">Check Blog</a>
+		</div>
+
+		<div class="center">
+			<section id="content">
+				<h2 class="subHeader">Last Articles</h2>
+
+				<div id="articles">
+					<article class="articleItem" id="articleTemplate">
+						<div class="imageWrap">
+							<img src="https://cursinhoparamedicina.com.br/wp-content/uploads/2022/10/Paisagem-1.jpg" alt="landscape">
+						</div>
+	
+						<h2>Test Article</h2>
+						<span class="date">
+							5 minutes ago
+						</span>
+						<a href="#">Read More</a>
+						<div class="clearfix"></div>
+					</article>
+				</div>
+
+			</section>
+
+			<aside id="sidebar">
+				<div id="navBlog" class="sidebarItem">
+					<h3>You can</h3>
+					<a href="#" class="btn btnSuccess">Create Article</a>
+				</div>
+				<div id="search" class="sidebarItem">
+					<h3>Searcher</h3>
+					<p>Search the article you are looking for</p>
+					<form>
+						<input type="text" name="search">
+						<input type="submit" name="submit" value="Search" class="btn">
+					</form>
+				</div>
+			</aside>
+
+			<div class="clearfix"></div>
+		</div>
+
+		<footer id="footer">
+			<div class="center">
+				<p>&copy;Master Frameworks for JS</p>
+			</div>
+		</footer>
+	</body>
+</html>
