@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Mockup Master Frameworks JavaScript</title>
+		<link rel="stylesheet" href="assets/css/head.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/styles.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/header.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/footer.css" type="text/css">
+		<link rel="stylesheet" href="assets/css/form.css" type="text/css">
+	</head>
+	<body>
+		<header id="header">
+			<div class="center">
+				<!--logo-->
+				<div id="logo">
+					<img src="assets/images/vue.svg" alt="appLogo" alt="Logo">
+					<span id="brand">
+						<strong>Curso</strong>Vue
+					</span>
+				</div>
+
+				<!--Nav-->
+				<nav id="menu">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Form</a></li>
+						<li><a href="#">Page 1</a></li>
+						<li><a href="#">Page 2</a></li>
+					</ul>
+				</nav>
+
+				<div class="clearfix"></div>
+			</div>
+		</header>
+
+		<div class="center">
+			<section id="content">
+
+                <h1 class="subHeader">Form</h1>
+
+                <form class="midForm">
+                    <div class="formGroup">
+                        <label for="firstname">First Name</label>
+                        <input type="text" name="firstname">
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" name="lastname">
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="bio">Bio</label>
+                        <textarea name="bio"></textarea>
+                    </div>
+
+                    <div class="formGroup radioButtons">
+                        <input type="radio" name="gender" value="male"/>Male
+                        <input type="radio" name="gender" value="female"/>Female
+                        <input type="radio" name="gender" value="other"/>Other
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <input type="submit" value="Submit" class="btn btnSuccess">
+                </form>
+
+			</section>
+
+			<aside id="sidebar">
+				<div id="navBlog" class="sidebarItem">
+					<h3>You can</h3>
+					<a href="#" class="btn btnSuccess">Create Article</a>
+				</div>
+				<div id="search" class="sidebarItem">
+					<h3>Searcher</h3>
+					<p>Search the article you are looking for</p>
+					<form>
+						<input type="text" name="search">
+						<input type="submit" name="submit" value="Search" class="btn">
+					</form>
+				</div>
+			</aside>
+
+			<div class="clearfix"></div>
+		</div>
+
+		<footer id="footer">
+			<div class="center">
+				<p>&copy;Master Frameworks for JS</p>
+			</div>
+		</footer>
+	</body>
+</html>
