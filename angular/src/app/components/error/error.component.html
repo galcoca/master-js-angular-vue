@@ -1,0 +1,21 @@
+<div [ngClass]="{
+    'errorImage' : typeError == 'default',
+    'errorImageSmall' : typeError == 'searchError' || typeError == 'customError'
+}">
+    <img src="assets/images/404error.png" alt="appNotFound" alt="404Error">
+</div>
+
+<div *ngIf="typeError == 'default'">
+    <h1 class="subHeader">404 Page Not Found</h1>
+    <p>The page you are looking for doesn't exists, please try again later</p>
+</div>
+
+<div *ngIf="typeError == 'searchError'">
+    <h1 class="subHeader">No articles Found</h1>
+    <p>Please try using diferent search words</p>
+</div>
+
+<div *ngIf="typeError == 'customError'">
+    <h1 class="subHeader">{{errorTitle}}</h1>
+    <p>{{errorContent}}</p>
+</div>

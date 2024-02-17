@@ -26,7 +26,11 @@ const controller = {
 
             article.title = params.title;
             article.content = params.content;
-            article.image = null
+            if (params.image) {
+                article.image = params.image;
+            } else {
+                article.image = null;
+            }
 
             article.save().then((articleStored) => {
                 return response.status(200).send({
@@ -135,8 +139,22 @@ const controller = {
                 });
             }
 
+            let articleImage = articleRemoved.image;
+
+            if(articleImage != undefined && articleImage != null){
+                let pathFile = './uploads/articles/'+articleImage;
+                fs.unlink(pathFile, (error) => {
+                    if(error) {
+                        return response.status(500).send({
+                            status: error,
+                            message: "Not valid image extension"
+                        });
+                    }
+                });
+            }
+
             return response.status(200).send({
-                status: 'success',
+                status: 'articleDeleted',
                 article: articleRemoved
             });
         })
@@ -179,18 +197,25 @@ const controller = {
 
         } else {
             let articleId = request.params.id;
-            Article.findOneAndUpdate({_id: articleId}, {image: fileName}, {new:true}).then((articleUpdated) => {
+            if(articleId){
+                Article.findOneAndUpdate({_id: articleId}, {image: fileName}, {new:true}).then((articleUpdated) => {
+                    return response.status(200).send({
+                        status: 'success',
+                        article: articleUpdated
+                    });
+                })
+                .catch(error => {
+                    return response.status(500).send({
+                        status: error,
+                        message: "Unable to update the article image"
+                    });
+                });
+            } else {
                 return response.status(200).send({
                     status: 'success',
-                    article: articleUpdated
+                    image: fileName
                 });
-            })
-            .catch(error => {
-                return response.status(500).send({
-                    status: error,
-                    message: "Unable to update the article image"
-                });
-            });
+            }
         }
 
     },

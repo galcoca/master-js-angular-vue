@@ -1,0 +1,33 @@
+<appSlider 
+    [pageTitle] = "homeText"
+    [size] = "'small'"
+></appSlider>
+
+<div class="center">
+    <section id="content">
+        <div id="favorite" *ngIf="favorite && favorite.year > 0">
+            <h2 class="subHeader">
+                Favorite
+            </h2>
+            <h3>
+                {{favorite.title | uppercase}}
+            </h3>
+            <h4>
+                {{favorite.year | isPair }}
+            </h4>
+            <h5>
+                {{this.dateShow | date:'dd/MM/yyyy'}}
+            </h5>
+        </div>
+
+        <div *ngFor="let movie of movies; let i = index">
+            <appMovie
+                [movie] = "movie"
+                [index] = "index"
+                (markFavorite)="showFavorite($event)"
+            ></appMovie>
+        </div>
+    </section>
+
+    <appSidebar></appSidebar>
+</div>

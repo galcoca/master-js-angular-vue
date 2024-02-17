@@ -1,0 +1,55 @@
+<appSlider [pageTitle]="homeText" [size]="'small'"></appSlider>
+
+<div class="center">
+    <section id="content">
+        <form class="midForm" #userForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="formGroup">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" #firstname="ngModel" [(ngModel)]="user.firstname" required pattern="[a-zA-z]+">
+
+                <small *ngIf="!firstname.valid && firstname.touched">
+                    The First Name is not valid
+                </small>
+            </div>
+
+            <div class="formGroup">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="user.lastname" required pattern="[a-zA-z]+">
+
+                <small *ngIf="!lastname.valid && lastname.touched">
+                    The Last Name is not valid
+                </small>
+            </div>
+
+            <div class="formGroup">
+                <label for="bio">Bio</label>
+                <textarea name="bio" #bio="ngModel" [(ngModel)]="user.bio" required></textarea>
+
+                <small *ngIf="!bio.valid && bio.touched">
+                    The Bio is not valid
+                </small>
+            </div>
+
+            <div class="formGroup radioButtons">
+                <input type="radio" name="gender" value="male" #gender="ngModel" [(ngModel)]="user.gender" required/>Male
+                <input type="radio" name="gender" value="female" #gender="ngModel" [(ngModel)]="user.gender" required/>Female
+                <input type="radio" name="gender" value="other" #gender="ngModel" [(ngModel)]="user.gender" required/>Other
+
+                <small *ngIf="!gender.valid && gender.touched">
+                    The Gender is not valid
+                </small>
+            </div>
+            <div class="clearfix"></div>
+
+            <input type="submit" value="Submit" class="btn btnSuccess" [disabled]="userForm.invalid">
+        </form>
+
+        <h2 class="subHeader">Eventos</h2>
+        <button (click)="clickedButton()"></button>
+
+        <input type="text" [(ngModel)]="field" (blur)="hasExit()">
+        {{field}}
+    </section>
+
+    <appSidebar></appSidebar>
+</div>
