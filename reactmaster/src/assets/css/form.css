@@ -1,0 +1,104 @@
+input[type="text"],
+input[type="file"],
+textarea {
+	width: 100% !important;
+	height: 30px;
+	border: 1px solid #ccc;
+	padding: 3px;
+	margin-bottom: 5px;
+	transition: 300ms all;
+}
+
+.imageUploader {
+	width: 100% !important;
+	height: 200px !important;
+	border: 1px solid #ccc;
+	padding: 3px;
+	margin-bottom: 5px;
+	transition: 300ms all;
+	margin-bottom: 10px;
+}
+
+.imageUploader img {
+	width: 100%;
+	height: 100%;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+  	box-shadow: 0px 0px 5px #ccc inset;
+}
+
+input[type="text"]:focus-visible,
+input[type="file"]:focus-visible,
+textarea:focus-visible {
+  	outline: none;
+}
+
+textarea {
+	width: 100%;
+	max-width: 100%;
+	max-height: 300px;
+	min-width: 100%;
+	height: 100px;
+	min-height: 100px;
+}
+
+.midForm {
+	width: 65%;
+	margin: 0px auto;
+}
+
+.midForm label {
+	display: block;
+	float: left;
+	text-align: left;
+	margin-bottom: 5px;
+	font-size: 17px;
+	margin-top: 10px;
+}
+
+.radioButtons {
+	margin-top: 10px;
+	float: left;
+	margin-bottom: 10px;
+}
+
+.midForm > .imageWrap img {
+	width: 150px !important;
+	margin: 0px auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
+}
+
+.imagePreview {
+  	max-width: 150px !important;
+}
+
+.midForm > .imageWrap {
+	padding: 0;
+	margin: 0;
+}
+
+@media only screen and (max-width: 419px) {
+	.midForm {
+		width: 95%;
+	}
+}
+
+@media only screen and (min-width: 420px) and (max-width: 768px) {
+	.midForm {
+		width: 85%;
+	}
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+	.midForm {
+		width: 75%;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	
+}
