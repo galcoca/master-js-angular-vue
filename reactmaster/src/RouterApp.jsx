@@ -25,4 +25,4 @@ class RouterApp extends Component{
     }
 }
 
-export default RouterApp
+export default RouterApp;
