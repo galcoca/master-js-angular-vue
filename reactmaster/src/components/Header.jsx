@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import logo from "../assets/images/logo.svg";
+import { NavLink  } from "react-router-dom";
 
 class Header extends Component {
 	render() {
@@ -15,19 +16,19 @@ class Header extends Component {
 					<nav id="menu">
 						<ul>
 							<li>
-								<p href="#">Home</p>
+								<NavLink to="/">Home</NavLink>
 							</li>
 							<li>
-								<p href="#">Blog</p>
+								<NavLink to="/blog">Blog</NavLink>
 							</li>
 							<li>
-								<p href="#">Form</p>
+								<NavLink to="/form">Form</NavLink>
 							</li>
 							<li>
-								<p href="#">Page 1</p>
+								<NavLink to="/movies">Movies</NavLink>
 							</li>
 							<li>
-								<p href="#">Page 2</p>
+								<NavLink to="/testpage">Page</NavLink>
 							</li>
 						</ul>
 					</nav>

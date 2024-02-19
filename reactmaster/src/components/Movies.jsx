@@ -24,7 +24,6 @@ class Movies extends Component {
 	}
 
 	favoriteMovie = (movie, index) => {
-		console.log(movie, index);
 		this.setState({
 			favorite: movie
 		});

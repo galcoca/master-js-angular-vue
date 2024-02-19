@@ -18,14 +18,12 @@ class TestSection extends Component {
 	};
 
 	HelloWorld(name, age) {
-		const presentation = (
+		return(
 			<div>
 				<h2>Hi, I'm {name}</h2>
 				<h3>I am {age} years old</h3>
 			</div>
 		);
-
-		return presentation;
 	}
 
 	adition = (e) => {
@@ -42,14 +40,13 @@ class TestSection extends Component {
 
 	render() {
 		const name = "Gabriel";
-
 		return (
 			<section id="content">
 				<h2 className="subHeader">Last Articles</h2>
 				<p>Hi, welcome to the Master JS: React</p>
 
 				<h2 className="subHeader">Functions & Basic JSX</h2>
-				{this.HelloWorld(name, 12)}
+				{this.HelloWorld(name, 29)}
 
 				<h2 className="subHeader">Components</h2>
 				<section className="components">

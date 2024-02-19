@@ -92,9 +92,9 @@ const controller = {
     },
 
     updateArticle: (request, response) => {
-        let articleId = request.params.id;
-
         let params = request.body;
+        let articleId = request.params.id;
+        let articleImage = request.params.imagePath;
 
         try {
             var validateTitle = !validator.isEmpty(params.title);
@@ -108,6 +108,17 @@ const controller = {
 
         if(validateTitle && validateContent){
             Article.findOneAndUpdate({_id:articleId}, params, {new:true}).then((articleUpdated) => {
+                if(articleImage != undefined && articleImage != null){
+                    let pathFile = './uploads/articles/'+articleImage;
+                    fs.unlink(pathFile, (error) => {
+                        if(error) {
+                            return response.status(500).send({
+                                status: error,
+                                message: "Not valid image extension"
+                            });
+                        }
+                    });
+                }
                 return response.status(200).send({
                     status: 'success',
                     article: articleUpdated

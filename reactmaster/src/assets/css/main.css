@@ -9,6 +9,11 @@ body {
 	-moz-osx-font-smoothing: antialiased;
 }
 
+.App {
+	position: relative;
+	min-height: 100vh;
+}
+
 .center {
 	width: 75%;
 	margin: 0px auto;
@@ -24,6 +29,17 @@ body {
 	float: left;
 	min-height: 650px;
 	margin-right: 25px;
+	padding-bottom: 70px;
+}
+
+#content.error404 {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.error404 img{
+    max-width: 40% !important;
+    width: 30% !important;
 }
 
 #sidebar {
@@ -51,29 +67,81 @@ body {
 	margin-top: 10px;
 }
 
+
 .btn {
-	display: block;
-	max-width: 80%;
-	background: black;
-	color: white;
-	padding: 15px;
-	font-weight: bold;
-	text-transform: uppercase;
-	font-size: 14px;
-	text-decoration: none;
-	transition: 300ms all;
-	border: none;
-	cursor: pointer;
-	border-radius: 4px;
+    display: block;
+    max-width: 80%;
+    background: black;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 300ms all;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align:center;
+}
+
+
+.btnSmall {
+    display: block;
+    max-width: 20%;
+    background: black;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+    transition: 300ms all;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align:center;
 }
 
 .btnSuccess {
-	background: #179613;
+    background: #179613;
+}
+
+.btnWarning {
+    background: #dfb11d;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.btnDanger {
+    background: #ce1b1b;
+    color: white !important;
+    text-decoration: none !important;
 }
 
 .btnSuccess:hover {
-	background: black;
+    background: black;
 }
+
+.btnWarning:hover, .btnDanger:hover {
+    opacity: 0.8;
+}
+
+.buttons {
+    margin-top: 30px;
+    display: flex;
+}
+
+.buttons a {
+	margin-top: 0px !important;
+}
+
+.buttons > .btnSmall {
+    margin-right: 15px;
+}
+
 
 .articleItem {
 	width: 100%;
