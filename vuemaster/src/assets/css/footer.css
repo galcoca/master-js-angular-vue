@@ -1,0 +1,30 @@
+#footer {
+	background: #f7f7f7;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	color: #444;
+	position: absolute;
+	bottom: 0;
+}
+
+#footer p {
+	margin: 0px;
+	padding: 0px;
+}
+
+.yearGreen {
+	background: green !important;
+	color: white !important;
+	padding: 10px !important;
+	width: 112px !important;
+	text-align: center !important;
+}
+
+.yearRed {
+	background: red !important;
+	color: white !important;
+	padding: 10px !important;
+	width: 112px !important;
+	text-align: center !important;
+}
